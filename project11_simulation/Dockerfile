@@ -1,6 +1,6 @@
 FROM ros:noetic-ros-base
 
-RUN export DEBIAN_FRONTEND=noninteractive && apt update && apt upgrade && apt install -y git python3-rosdep python3-vcstool keyboard-configuration python-is-python3 && apt clean
+RUN export DEBIAN_FRONTEND=noninteractive && apt update && apt upgrade -y && apt install -y git python3-rosdep python3-vcstool keyboard-configuration python-is-python3 && apt clean
 
 # Create field user and add passwordless sudo rights
 RUN useradd --create-home --shell /bin/bash field && adduser field sudo && echo "ALL ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
